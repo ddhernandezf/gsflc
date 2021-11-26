@@ -1,0 +1,123 @@
+<dx-toolbar style="padding: 0px 5px;">
+  <dxi-item location="before" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <div class="toolbar-label"><b>Operación de transacciones</b></div>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="refresh" (click)="GetTransactions()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="plus" (click)="CallNewForm()"></dx-button>
+    </div>
+  </dxi-item>
+</dx-toolbar>
+<dx-box direction="row" width="100%">
+  <dxi-item [ratio]="2">
+    <div class="dx-field miti">
+      <div class="dx-field-item-label-location-top">Mes</div>
+      <div class="dx-field-value">
+        <dx-select-box [dataSource]="dataMonths"
+                       valueExpr="id"
+                       displayExpr="name"
+                       placeholder="Seleccionar"
+                       [searchEnabled]="true"
+                       searchMode="contains"
+                       [(ngModel)]="searchForm.month"
+                       [showClearButton]="true"
+                       (onSelectionChanged)="DateChange('month')"></dx-select-box>
+      </div>
+    </div>
+  </dxi-item>
+  <dxi-item [ratio]="1">
+    <div class="dx-field miti">
+      <div class="dx-field-item-label-location-top">Año</div>
+      <div class="dx-field-value">
+        <dx-number-box [(ngModel)]="searchForm.year"
+                       [showClearButton]="true"
+                       (valueChange)="DateChange('year')"></dx-number-box>
+      </div>
+    </div>
+  </dxi-item>
+</dx-box>
+<dx-box direction="row" width="100%">
+  <dxi-item [ratio]="1">
+    <div class="dx-field miti">
+      <div class="dx-field-item-label-location-top">Vehículo</div>
+      <div class="dx-field-value">
+        <dx-select-box [dataSource]="dataVehicle"
+                       valueExpr="id"
+                       displayExpr="name"
+                       placeholder="Seleccionar"
+                       [grouped]="true"
+                       [searchEnabled]="true"
+                       searchMode="contains"
+                       [(ngModel)]="searchForm.vehicleId"
+                       [showClearButton]="true"
+                       (onSelectionChanged)="VehicleChange()"></dx-select-box>
+      </div>
+    </div>
+  </dxi-item>
+</dx-box>
+<dx-toolbar style="padding: 0px 5px;" [visible]="dataTransaction.length > 0">
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="datafield" (click)="Detail()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="edit" (click)="Edit()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="trash" (click)="HeaderSelected()"></dx-button>
+    </div>
+  </dxi-item>
+</dx-toolbar>
+<dx-data-grid #DxgTran [dataSource]="dataTransaction" [visible]="dataTransaction.length > 0"
+              [wordWrapEnabled]="true">
+  <dxo-selection mode="single"></dxo-selection>
+  <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+  <dxo-summary>
+    <dxi-group-item column="total" summaryType="sum" [valueFormat]="currencyFormat" displayFormat="Total: {0}"></dxi-group-item>
+    <dxi-total-item column="valueTotal" summaryType="sum" [valueFormat]="currencyFormat" displayFormat="Total: {0}"></dxi-total-item>
+  </dxo-summary>
+
+  <dxi-column dataField="type.name" caption="Tipo Transacción" dataType="string" alignment="left" [groupIndex]="0"></dxi-column>
+  <dxi-column dataField="transactionDate" caption="Fecha" dataType="date" alignment="left" [format]="'dd/MM/yyyy'" [width]="70"></dxi-column>
+  <dxi-column dataField="movement.name" caption="Movimiento" dataType="string" alignment="left"></dxi-column>
+  <dxi-column dataField="valueTotal" caption="Total" dataType="number" alignment="right" [format]="currencyFormat" [width]="100"></dxi-column>
+</dx-data-grid>
+<app-component-transaction-form [Blocker]="Blocker"
+                                [Visible]="tranForm.visible"
+                                [Title]="tranForm.title"
+                                [Vehicle]="searchForm.vehicle"
+                                [Form]="transactionForm"
+                                [Month]="searchForm.month"
+                                [Year]="searchForm.year"
+                                (Closing)="CloseForm()"
+                                (Saved)="HeaderSaved()"></app-component-transaction-form>
+<app-component-transaction-detail [Blocker]="Blocker"
+                                  [Visible]="detailForm.visible"
+                                  [Title]="detailForm.title"
+                                  [SubTitle]="detailForm.subTitle"
+                                  [Data]="dataTranDetail"
+                                  [TransactionId]="transactionId"
+                                  [ShowForm]="dataTranDetail.length === 0"
+                                  [IsItEmpty]="dataTranDetail.length === 0"
+                                  (Closing)="CloseDetailForm()"
+                                  (DetailSaved)="DetailSaved()"
+                                  (DeleteSelected)="DetailSelected($event)"></app-component-transaction-detail>
+<app-layout-confirm
+  [Properties]="headerConfirm"
+  (Confirm)="DeleteHeader()"
+  (CloseCofnirm)="CloseHeaderConfirm()"></app-layout-confirm>
+<app-layout-confirm
+  [Properties]="detailConfirm"
+  (Confirm)="DeleteDetail()"
+  (CloseCofnirm)="CloseDetailConfirm()"></app-layout-confirm>

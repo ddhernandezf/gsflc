@@ -1,0 +1,77 @@
+version: '3.5'
+
+services:
+    gsflcUI:
+        container_name: gsflcUI
+        image: nginx:1.17.1-alpine
+        ports:
+            - 80:80
+        volumes:
+            - ./UI/Deploy:/usr/share/nginx/html
+            - ./UI/Config:/etc/nginx/conf.d
+        restart: always
+        networks: 
+            gsflcNet:
+                ipv4_address: 192.168.1.2
+    gsflcAPI:
+        container_name: gsflcAPI
+        image: mcr.microsoft.com/dotnet/core/aspnet:3.1
+        ports: 
+            - 8084:80
+        volumes: 
+            - ./API:/app
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Production
+        entrypoint: ["dotnet", "Transporte.API.dll"]
+        working_dir: /app
+        restart: always
+        networks: 
+            gsflcNet:
+                ipv4_address: 192.168.1.3
+    gsflcRPT:
+        container_name: gsflcRPT
+        image: mcr.microsoft.com/dotnet/core/aspnet:3.1
+        ports: 
+            - 8085:80
+        volumes: 
+            - ./REPORT:/app
+        environment: 
+            - ASPNETCORE_ENVIRONMENT=Production
+        entrypoint: ["dotnet", "Transporte.Report.dll"]
+        working_dir: /app
+        restart: always
+        networks: 
+            gsflcNet:
+                ipv4_address: 192.168.1.5
+    gsflcDB:
+        container_name: gsflcDB
+        image:  mcr.microsoft.com/mssql/server:2019-CU1-ubuntu-16.04
+        environment: 
+            ACCEPT_EULA: Y
+            SA_PASSWORD: Letmein1.
+            MSSQL_PID: Express
+        expose: 
+            - 1433
+        #ports: 
+        #    - 1455:1433
+        volumes: 
+            - ./DB:/var/opt/mssql/data
+        restart: always
+        networks: 
+            gsflcNet:
+                ipv4_address: 192.168.1.4
+
+volumes:
+    gsflcUI:
+    gsflcAPI:
+    gsflcRPT:
+    gsflcDB:
+
+networks: 
+    gsflcNet:
+        name: gsflcNet
+        driver: bridge
+        ipam: 
+            driver: default
+            config: 
+                - subnet: 192.168.1.0/24

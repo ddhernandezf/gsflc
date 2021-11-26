@@ -1,0 +1,3 @@
+2020-06-15 06:52:10,232 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-15 06:52:28,395 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-15 06:52:28,597 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}

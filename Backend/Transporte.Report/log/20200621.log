@@ -1,0 +1,11 @@
+2020-06-21 20:45:45,897 [6] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 20:46:23,644 [7] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 20:46:59,558 [18] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:06:44,676 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:07:20,161 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:23:24,464 [13] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:27:29,473 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:27:43,065 [13] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:35:15,817 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:35:56,130 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-06-21 21:36:20,943 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}

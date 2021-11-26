@@ -1,0 +1,192 @@
+<dx-toolbar style="padding: 0px 5px;">
+  <dxi-item location="before" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <div class="toolbar-label"><b>{{ReportTitle}}</b></div>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="refresh" (click)="Refresh()"></dx-button>
+    </div>
+  </dxi-item>
+</dx-toolbar>
+<form (submit)="Submit()" style="padding: 5px;">
+  <dx-form [formData]="form"
+           [showColonAfterLabel]="false"
+           [showValidationSummary]="false"
+           labelLocation="top"
+           (onFieldDataChanged)="FormFieldChange($event)">
+    <dxo-col-count-by-screen
+      [xs]="6"></dxo-col-count-by-screen>
+    <dxi-item dataField="monthAndYear" [colSpan]="1"
+              [label]="{ text: 'Por mes' }"
+              editorType="dxSwitch"
+              [editorOptions]="{ switchedOnText: 'SI', width: '60', switchedOffText: 'NO' }"></dxi-item>
+    <dxi-item dataField="docType"
+              [colSpan]="4"
+              [label]="{ text: ' ' }"
+              editorType="dxSelectBox"
+              [editorOptions]="{
+                  dataSource: dataDocType,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  showClearButton: true,
+                  searchEnabled: true
+                }">
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="dateRange" [colSpan]="1"
+              [label]="{ text: 'Por fecha' }"
+              editorType="dxSwitch"
+              [editorOptions]="{
+                switchedOnText: 'Rango',
+                width: '60',
+                switchedOffText: 'Fecha',
+                disabled: form.monthAndYear
+              }"></dxi-item>
+    <dxi-item dataField="month" *ngIf="form.monthAndYear"
+              [colSpan]="3"
+              [label]="{ text: 'Mes' }"
+              editorType="dxSelectBox"
+              [editorOptions]="{
+                  dataSource: dataMonths,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  showClearButton: true,
+                  searchEnabled: true
+                }">
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="year" *ngIf="form.monthAndYear"
+              [colSpan]="3"
+              [label]="{ text: 'Año' }"
+              editorType="dxNumberBox"
+              [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 4
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="startDate" *ngIf="!form.monthAndYear"
+              [colSpan]="startDateColspan"
+              [label]="{ text: startDateLabel }"
+              editorType="dxDateBox"
+              [editorOptions]="{
+                  type: 'date',
+                  displayFormat: 'dd/MM/yyyy',
+                  showClearButton: true
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="endDate" *ngIf="!form.monthAndYear && form.dateRange"
+              [colSpan]="3"
+              [label]="{ text: 'Fecha final' }"
+              editorType="dxDateBox"
+              [editorOptions]="{
+                  type: 'date',
+                  displayFormat: 'dd/MM/yyyy',
+                  showClearButton: true,
+                  min: minDate
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item widget="dxButton" dataField="vehicles"
+              [label]="{ text: 'Vehículos' }"
+              [colSpan]="6">
+      <div *dxTemplate>
+        <dx-drop-down-box [dataSource]="dataVehicle"
+                          valueExpr="id"
+                          displayExpr="name"
+                          placeholder="Selecionar.."
+                          [(value)]="vehicleValue">
+          <div *dxTemplate="let data of 'content'">
+            <dx-list #VehicleList [dataSource]="dataVehicle"
+                     [grouped]="true"
+                     [collapsibleGroups]="true"
+                     [selectedItemKeys]="selectedVehicles"
+                     displayExpr="name"
+                     selectionMode="all"
+                     selectAllMode="page"
+                     [showSelectionControls]="true"
+                     (onSelectionChanged)="VehicleListChanged()"></dx-list>
+          </div>
+        </dx-drop-down-box>
+      </div>
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item widget="dxButton" dataField="services" *ngIf="ReportOption === 'BALANCE' || ReportOption === 'SERVICE'"
+              [label]="{ text: 'Servicios' }"
+              [colSpan]="6">
+      <div *dxTemplate>
+        <dx-drop-down-box [dataSource]="dataServices"
+                          valueExpr="id"
+                          displayExpr="name"
+                          placeholder="Selecionar.."
+                          [(value)]="serviceValue">
+          <div *dxTemplate="let data of 'content'">
+            <dx-list #ServiceList [dataSource]="dataServices"
+                     [grouped]="true"
+                     [collapsibleGroups]="true"
+                     [selectedItemKeys]="selectedServices"
+                     displayExpr="name"
+                     selectionMode="all"
+                     selectAllMode="page"
+                     [showSelectionControls]="true"
+                     (onSelectionChanged)="ServiceListChanged()"></dx-list>
+          </div>
+        </dx-drop-down-box>
+      </div>
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item widget="dxButton" dataField="expenses" *ngIf="ReportOption === 'BALANCE' || ReportOption === 'EXPENSE'"
+              [label]="{ text: 'Gastos' }"
+              [colSpan]="6">
+      <div *dxTemplate>
+        <dx-drop-down-box [dataSource]="dataExpenses"
+                          valueExpr="id"
+                          displayExpr="name"
+                          placeholder="Selecionar.."
+                          [(value)]="expenseValue">
+          <div *dxTemplate="let data of 'content'">
+            <dx-list #ExpenseList [dataSource]="dataExpenses"
+                     [grouped]="true"
+                     [collapsibleGroups]="true"
+                     [selectedItemKeys]="selectedExpenses"
+                     displayExpr="name"
+                     selectionMode="all"
+                     selectAllMode="page"
+                     [showSelectionControls]="true"
+                     (onSelectionChanged)="ExpenseListChanged()"></dx-list>
+          </div>
+        </dx-drop-down-box>
+      </div>
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item itemType="button"
+              horizontalAlignment="center"
+              [colSpan]="6"
+              [buttonOptions]="{
+                  text:'Generar reporte',
+                  icon: 'search',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+  </dx-form>
+</form>
+<dx-data-grid #DxgData [dataSource]="dataReport.data" [wordWrapEnabled]="true" [columnAutoWidth]="true"
+              [visible]="false" (onContentReady)="XlsDownload()">
+  <dxo-scrolling columnRenderingMode="virtual"></dxo-scrolling>
+  <dxo-paging [pageSize]="6"></dxo-paging>
+  <dxo-export [enabled]="true" [fileName]="reportName"></dxo-export>
+
+  <dxi-column dataField="transaction.type.name" caption="Tipo Transacción" dataType="string" [width]="100"></dxi-column>
+  <dxi-column dataField="transaction.option.type.name" caption="Tipo" dataType="string" [width]="100"></dxi-column>
+  <dxi-column dataField="transaction.option.name" caption="Opción" dataType="string" [width]="150"></dxi-column>
+  <dxi-column dataField="quantity" caption="Cantidad" dataType="number" alignment="center" [width]="100"></dxi-column>
+  <dxi-column dataField="transaction.transactionDate" caption="Fecha" dataType="date" [format]="'dd/MM/yyyy'" alignment="center" [width]="100"></dxi-column>
+  <dxi-column dataField="transaction.vehicle.text" caption="Vehículo" dataType="string" [width]="250"></dxi-column>
+  <dxi-column dataField="description" caption="Descripción transacción" dataType="string" [width]="150"></dxi-column>
+  <dxi-column dataField="unitPrice" caption="P. Unitario" dataType="number" [format]="currencyFormat" alignment="right" [width]="125"></dxi-column>
+  <dxi-column dataField="totalPrice" caption="Total" dataType="number" [format]="currencyFormat" alignment="right" [width]="125"></dxi-column>
+</dx-data-grid>

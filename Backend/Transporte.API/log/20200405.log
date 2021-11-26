@@ -1,0 +1,17 @@
+2020-04-05 20:46:40,508 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 20:47:17,107 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 20:48:37,808 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 20:50:16,270 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:12:07,320 [7] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:12:42,320 [20] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:16:21,971 [9] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:26:20,066 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:26:20,199 [4] ERROR Transporte.Log - {"User":"douglas@mitigt.com","Class":"UserController","Method":"Get","Error":"Cannot access a disposed object. A common cause of this error is disposing a context that was resolved from dependency injection and then later trying to use the same context instance elsewhere in your application. This may occur if you are calling Dispose() on the context, or wrapping the context in a using statement. If you are using dependency injection, you should let the dependency injection container take care of disposing context instances.\r\nObject name: 'Database'."}
+2020-04-05 21:27:28,964 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:32:58,552 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:35:53,395 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:37:01,519 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:38:57,034 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:42:21,266 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:49:22,878 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}
+2020-04-05 21:50:13,424 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"::1"}}

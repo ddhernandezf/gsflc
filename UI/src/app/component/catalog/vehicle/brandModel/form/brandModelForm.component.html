@@ -1,0 +1,51 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <form (submit)="Submit()">
+    <dx-form [formData]="Form"
+             [showColonAfterLabel]="false"
+             [showValidationSummary]="false"
+             labelLocation="top">
+      <dxo-col-count-by-screen
+        [xs]="6"></dxo-col-count-by-screen>
+      <dxi-item dataField="brand.id"
+                [colSpan]="6"
+                [label]="{ text: 'Marca' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: DataType,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  showClearButton: true,
+                  searchEnabled: true,
+                  grouped: true
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="name"
+                [colSpan]="6"
+                [label]="{ text: 'Nombre' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 40
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item itemType="button"
+                horizontalAlignment="center"
+                [colSpan]="6"
+                [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    </dx-form>
+  </form>
+
+</dx-popup>

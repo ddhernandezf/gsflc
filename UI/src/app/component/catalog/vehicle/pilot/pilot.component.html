@@ -1,0 +1,51 @@
+<dx-toolbar style="padding: 0px 5px;">
+  <dxi-item location="before" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <div class="toolbar-label"><b>Pilotos</b></div>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="refresh" (click)="Refresh()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="plus" (click)="New()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="edit" (click)="Edit()"></dx-button>
+    </div>
+  </dxi-item>
+  <dxi-item location="after" widget="dxButton" locateInMenu="never">
+    <div *dxTemplate>
+      <dx-button icon="trash" (click)="Delete()"></dx-button>
+    </div>
+  </dxi-item>
+</dx-toolbar>
+<br>
+<dx-data-grid #DxgData [dataSource]="data"
+              [wordWrapEnabled]="true">
+  <dxo-selection mode="single"></dxo-selection>
+  <dxo-filter-row [visible]="true"></dxo-filter-row>
+  <dxo-summary>
+    <dxi-total-item column="completeName" summaryType="count" displayFormat="{0} registros"></dxi-total-item>
+  </dxo-summary>
+  <dxo-paging [pageSize]="5"></dxo-paging>
+  <dxo-pager [showPageSizeSelector]="false" [allowedPageSizes]="[5]" [showInfo]="true"></dxo-pager>
+
+  <dxi-column dataField="completeName" caption="Nombre" dataType="number" alignment="left"></dxi-column>
+  <dxi-column dataField="isMale" caption="Género" dataType="boolean" alignment="center" [width]="75"></dxi-column>
+</dx-data-grid>
+<app-layout-confirm
+  [Properties]="confirm"
+  (Confirm)="Confirm()"
+  (CloseCofnirm)="CloseConfirm()"></app-layout-confirm>
+<app-component-pilot-form
+  [Visible]="formPop.visible"
+  [Title]="formPop.title"
+  [Form]="selectedItem"
+  (Closing)="CloseForm()"
+  (FormResult)="Save($event)"></app-component-pilot-form>

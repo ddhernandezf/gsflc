@@ -1,0 +1,8 @@
+2020-06-10 00:24:28,762 [9] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:29,565 [9] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,024 [22] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Service","Method":"GetGrouped","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,173 [25] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"General","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,173 [21] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Vehicle","Method":"GetGrouped","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,174 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,308 [26] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"General","Method":"GetDocs","Data":{"ip":"127.0.0.1"}}
+2020-06-10 00:24:42,387 [9] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Expense","Method":"GetGrouped","Data":{"ip":"127.0.0.1"}}

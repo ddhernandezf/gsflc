@@ -1,0 +1,62 @@
+<form (submit)="Submit()">
+  <dx-form [formData]="Form" (onFieldDataChanged)="FormFieldChange($event)"
+           [showColonAfterLabel]="false"
+           [showValidationSummary]="false"
+           labelLocation="top">
+    <dxo-col-count-by-screen
+      [xs]="6"></dxo-col-count-by-screen>
+    <dxi-item dataField="quantity"
+              [colSpan]="2"
+              [label]="{ text: 'Cantidad' }"
+              editorType="dxNumberBox"
+              [editorOptions]="{
+                  showClearButton: true
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="description"
+              [colSpan]="4"
+              [label]="{ text: 'Descripción' }"
+              editorType="dxTextBox"
+              [editorOptions]="{
+                  showClearButton: true
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="unitPrice"
+              [colSpan]="3"
+              [label]="{ text: 'Monto' }"
+              editorType="dxNumberBox"
+              [editorOptions]="{
+                  showClearButton: true,
+                  format: currencyFormat
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="totalPrice"
+              [colSpan]="3"
+              [label]="{ text: 'Total' }"
+              editorType="dxNumberBox"
+              [editorOptions]="{
+                  disabled: true,
+                  format: currencyFormat
+                }">
+      <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item itemType="button"
+              horizontalAlignment="center"
+              [colSpan]="3"
+              [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    <dxi-item widget="dxButton"
+              horizontalAlignment="center"
+              [colSpan]="3">
+      <div *dxTemplate>
+        <dx-button icon="close" text="Cancelar" (click)="Close()"></dx-button>
+      </div>
+    </dxi-item>
+  </dx-form>
+</form>

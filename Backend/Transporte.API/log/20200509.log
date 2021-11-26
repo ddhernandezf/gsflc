@@ -1,0 +1,2 @@
+2020-05-09 00:00:39,824 [34] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"TrailerType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-09 00:00:40,154 [36] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}

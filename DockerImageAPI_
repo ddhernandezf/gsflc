@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+WORKDIR /app
+ENV ASPNETCORE_ENVIRONMENT Production
+COPY ./Backend/Transporte/ ./
+RUN dotnet restore
+RUN dotnet publish Transporte.API/Transporte.API.csproj -c Release -o /app/out
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
+WORKDIR /app
+COPY --from=build /app/out /app
+ENTRYPOINT ["dotnet", "Transporte.API.dll"]

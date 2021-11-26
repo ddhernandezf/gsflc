@@ -1,0 +1,51 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Action] (Table)
+       [dbo].[Brand] (Table)
+       [dbo].[BrandModel] (Table)
+       [dbo].[Expense] (Table)
+       [dbo].[ExpenseType] (Table)
+       [dbo].[Pilot] (Table)
+       [dbo].[RegistrationType] (Table)
+       [dbo].[Role] (Table)
+       [dbo].[RoleAction] (Table)
+       [dbo].[RoleUser] (Table)
+       [dbo].[Service] (Table)
+       [dbo].[ServiceType] (Table)
+       [dbo].[Transaction] (Table)
+       [dbo].[TransactionDailyResume] (Table)
+       [dbo].[TransactionDetail] (Table)
+       [dbo].[User] (Table)
+       [dbo].[Vehicle] (Table)
+       [dbo].[VehicleType] (Table)
+       Default Constraint: unnamed constraint on [dbo].[Pilot] (Default Constraint)
+       [dbo].[fkBrandmodelBrand] (Foreign Key)
+       [dbo].[fkExpenseExpensetype] (Foreign Key)
+       [dbo].[fkRoleactionAction] (Foreign Key)
+       [dbo].[fkRoleactionRole] (Foreign Key)
+       [dbo].[fkRoleuserUser] (Foreign Key)
+       [dbo].[fkRoleuserRole] (Foreign Key)
+       [dbo].[fkServiceServicetype] (Foreign Key)
+       [dbo].[fkTransactionVehicle] (Foreign Key)
+       [dbo].[fkTransactionService] (Foreign Key)
+       [dbo].[fkTransactionExpense] (Foreign Key)
+       [dbo].[fkTransactionUser] (Foreign Key)
+       [dbo].[fkTransactiondailyresumeVehicle] (Foreign Key)
+       [dbo].[fkTransactiondetailTransaction] (Foreign Key)
+       [dbo].[fkVehicleType] (Foreign Key)
+       [dbo].[fkVehicleRegistrsationtype] (Foreign Key)
+       [dbo].[fkVehicleBrand] (Foreign Key)
+       [dbo].[fkVehicleModel] (Foreign Key)
+       [dbo].[fkVehiclePilot] (Foreign Key)
+
+** Supporting actions

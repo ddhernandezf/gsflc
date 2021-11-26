@@ -1,0 +1,49 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <h2 style="color: #728e94;">{{SubTitle | date: 'dd/MM/yyyy'}}</h2>
+  <app-component-transaction-detail-form [Blocker]="Blocker"
+                                         [hidden]="!showForm"
+                                         [Form]="item"
+                                         [TransactionId]="TransactionId"
+                                         [IsItEmpty]="IsItEmpty"
+                                         (CloseForm)="Cancel()"
+                                         (FormResult)="DetailItem()"></app-component-transaction-detail-form>
+  <dx-toolbar style="padding: 0px 5px;" [visible]="!showForm">
+    <dxi-item location="after" widget="dxButton" locateInMenu="never">
+      <div *dxTemplate>
+        <dx-button icon="plus" (click)="New()"></dx-button>
+      </div>
+    </dxi-item>
+    <dxi-item location="after" widget="dxButton" locateInMenu="never">
+      <div *dxTemplate>
+        <dx-button icon="edit" (click)="Edit()"></dx-button>
+      </div>
+    </dxi-item>
+    <dxi-item location="after" widget="dxButton" locateInMenu="never">
+      <div *dxTemplate>
+        <dx-button icon="trash" (click)="Delete()"></dx-button>
+      </div>
+    </dxi-item>
+  </dx-toolbar>
+  <dx-data-grid #DxgDetailTran [dataSource]="Data" [visible]="!showForm"
+                [wordWrapEnabled]="true">
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-paging [pageSize]="6"></dxo-paging>
+
+    <dxi-column dataField="quantity" caption="Cant." dataType="number" alignment="left" [width]="45"></dxi-column>
+    <dxi-column dataField="description" caption="Descripción" dataType="string" alignment="left"></dxi-column>
+    <dxi-column dataField="unitPrice" caption="P. Unitario" dataType="number" alignment="right" [format]="currencyFormat" [width]="65"></dxi-column>
+    <dxi-column dataField="totalPrice" caption="Total" dataType="number" alignment="right" [format]="currencyFormat" [width]="65"></dxi-column>
+
+    <dxo-grouping [autoExpandAll]="false"></dxo-grouping>
+
+    <dxo-summary>
+      <dxi-total-item column="totalPrice" summaryType="sum" [valueFormat]="currencyFormat" displayFormat="Total: {0}"></dxi-total-item>
+    </dxo-summary>
+  </dx-data-grid>
+</dx-popup>

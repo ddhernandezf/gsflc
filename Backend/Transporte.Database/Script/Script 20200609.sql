@@ -1,0 +1,1 @@
+﻿ALTER TABLE [TransactionDetail] ALTER COLUMN [Quantity] DECIMAL(18,2) NOT NULL; 

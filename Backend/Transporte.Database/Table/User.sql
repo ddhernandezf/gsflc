@@ -1,0 +1,11 @@
+﻿CREATE TABLE [dbo].[User]
+(
+	[Id]			TINYINT NOT NULL IDENTITY(1,1),
+	[Email]			VARCHAR(120) NOT NULL,
+	[Password]		VARCHAR(300) NOT NULL,
+	[CompleteName]	VARCHAR(120) NOT NULL,
+	[ResetPassword]	BIT NOT NULL DEFAULT 0,
+	[Active]		BIT NOT NULL DEFAULT 1,
+	CONSTRAINT pkUser PRIMARY KEY([Id]),
+	CONSTRAINT uqUser UNIQUE([Email])
+)

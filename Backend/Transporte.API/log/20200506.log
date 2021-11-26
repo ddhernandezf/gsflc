@@ -1,0 +1,33 @@
+2020-05-06 18:12:19,355 [13] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 18:13:23,081 [6] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"VehicleType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 18:13:23,104 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 18:13:23,207 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:47:05,875 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:47:05,875 [7] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"VehicleType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:47:05,875 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:50:11,496 [18] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:50:11,496 [19] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:50:11,602 [18] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:53:27,358 [24] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:53:27,397 [25] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"VehicleType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:53:27,458 [24] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:55:12,322 [28] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:55:12,334 [30] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:55:12,424 [28] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:58:10,662 [23] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:58:10,692 [21] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Brand","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 19:58:10,820 [21] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:14,471 [11] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Add","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:14,754 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:21,447 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Update","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:21,532 [8] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:30,946 [8] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Add","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:31,110 [8] ERROR Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModelController","Method":"Add","Error":"Ya existe un modelo nombrado 'Test'"}
+2020-05-06 20:09:35,077 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Add","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:35,114 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:40,789 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Update","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:40,825 [12] ERROR Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModelController","Method":"Update","Error":"Ya existe un modelo nombrado 'Test'"}
+2020-05-06 20:09:44,741 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Delete","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:44,809 [12] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:48,421 [15] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Delete","Data":{"ip":"127.0.0.1"}}
+2020-05-06 20:09:48,470 [8] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"BrandModel","Method":"Get","Data":{"ip":"127.0.0.1"}}

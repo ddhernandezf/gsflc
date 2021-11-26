@@ -1,0 +1,6 @@
+2020-05-29 00:00:44,941 [18] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-05-29 00:02:47,108 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-05-29 00:04:12,993 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-05-29 00:07:38,682 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-05-29 00:28:42,276 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-05-29 00:30:55,237 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}

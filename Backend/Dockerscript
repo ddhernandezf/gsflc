@@ -1,0 +1,2 @@
+docker build -f DockerfileApi -t registry.docker.local/transporte-api --no-cache --force-rm .
+docker build -f DockerfileApi -t transporte-api:1.0.0 --no-cache --force-rm .

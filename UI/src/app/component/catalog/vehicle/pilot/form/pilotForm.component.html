@@ -1,0 +1,63 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <form (submit)="Submit()">
+    <dx-form [formData]="Form"
+             [showColonAfterLabel]="false"
+             [showValidationSummary]="false"
+             labelLocation="top">
+      <dxo-col-count-by-screen
+        [xs]="8"></dxo-col-count-by-screen>
+      <dxi-item dataField="completeName"
+                [colSpan]="8"
+                [label]="{ text: 'Nombre' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 40
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="hiringDate"
+                [colSpan]="4"
+                [label]="{ text: 'Fecha contratación' }"
+                editorType="dxDateBox"
+                [editorOptions]="{
+                  type: 'date',
+                  displayFormat: 'dd/MM/yyyy',
+                  showClearButton: true
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="bornDate"
+                [colSpan]="4"
+                [label]="{ text: 'Fecha nacimiento' }"
+                editorType="dxDateBox"
+                [editorOptions]="{
+                  type: 'date',
+                  displayFormat: 'dd/MM/yyyy',
+                  showClearButton: true
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="isMale"
+                [colSpan]="4"
+                [label]="{ text: 'Masculino' }"
+                editorType="dxCheckBox">
+      </dxi-item>
+      <dxi-item itemType="button"
+                horizontalAlignment="center"
+                [colSpan]="4"
+                [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    </dx-form>
+  </form>
+
+</dx-popup>

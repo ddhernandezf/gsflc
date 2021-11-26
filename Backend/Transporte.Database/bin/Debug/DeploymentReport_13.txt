@@ -1,0 +1,48 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Pilot]
+       [dbo].[RegistrationType]
+       [dbo].[Vehicle]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Vehicle].[Trailer] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Pilot] (Default Constraint)
+       unnamed constraint on [dbo].[Vehicle] (Default Constraint)
+       [dbo].[fkVehicleTrailer] (Foreign Key)
+     Table rebuild
+       [dbo].[Pilot] (Table)
+       [dbo].[RegistrationType] (Table)
+       [dbo].[Vehicle] (Table)
+     Alter
+       [dbo].[Trailer] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[fkVehiclePilot] (Foreign Key)
+       [dbo].[fkVehicleRegistrsationtype] (Foreign Key)
+       [dbo].[fkTrailerRegistrationtype] (Foreign Key)
+       [dbo].[fkTransactionVehicle] (Foreign Key)
+       [dbo].[fkTransactiondailyresumeVehicle] (Foreign Key)
+       [dbo].[fkVehicleType] (Foreign Key)
+       [dbo].[fkVehicleModel] (Foreign Key)
+       [dbo].[fkVehicleBrand] (Foreign Key)
+       [dbo].[uqTrailer] (Unique Constraint)
+     Create
+       [dbo].[uqTrailer] (Unique Constraint)
+       [dbo].[fkVehiclePilot] (Foreign Key)
+       [dbo].[fkVehicleRegistrsationtype] (Foreign Key)
+       [dbo].[fkTrailerRegistrationtype] (Foreign Key)
+       [dbo].[fkTransactionVehicle] (Foreign Key)
+       [dbo].[fkTransactiondailyresumeVehicle] (Foreign Key)
+       [dbo].[fkVehicleType] (Foreign Key)
+       [dbo].[fkVehicleModel] (Foreign Key)
+       [dbo].[fkVehicleBrand] (Foreign Key)
+
+The column [dbo].[Vehicle].[Trailer] is being dropped, data loss could occur.
+

@@ -1,0 +1,84 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <form (submit)="Submit()">
+    <dx-form [formData]="Form"
+             [showColonAfterLabel]="false"
+             [showValidationSummary]="false"
+             labelLocation="top">
+      <dxo-col-count-by-screen
+        [xs]="6"></dxo-col-count-by-screen>
+      <dxi-item dataField="email"
+                [colSpan]="6"
+                [label]="{ text: 'Email' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 40
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+        <dxi-validation-rule type="email" message="Formato incorrecto"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="name"
+                [colSpan]="6"
+                [label]="{ text: 'Nombre' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 100
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="password"
+                [colSpan]="6"
+                [label]="{ text: 'Contraseña' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 16
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="role.id"
+                [colSpan]="4"
+                [label]="{ text: 'Rol' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: DataRole,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar'
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="reset"
+                [colSpan]="1"
+                [label]="{ text: 'Resetear' }"
+                editorType="dxCheckBox"
+                [editorOptions]="{
+                  disabled: (this.Form === undefined || this.Form === null) || this.Form.id === null
+                }">
+      </dxi-item>
+      <dxi-item dataField="active"
+                [colSpan]="1"
+                [label]="{ text: 'Activo' }"
+                editorType="dxCheckBox"
+                [editorOptions]="{
+                  disabled: (this.Form === undefined || this.Form === null) || this.Form.id === null
+                }">
+      </dxi-item>
+      <dxi-item itemType="button"
+                horizontalAlignment="center"
+                [colSpan]="6"
+                [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    </dx-form>
+  </form>
+</dx-popup>

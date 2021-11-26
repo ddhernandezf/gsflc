@@ -1,0 +1,3 @@
+docker build -t miti/angularbuilder:9.1.0  -f DockerImageAngularBuilder .
+docker build -t miti/gsflc/tranposrte/ui:1.0.0 -f DockerImageUI .
+docker build -t miti/gsflc/tranposrte/api:1.0.0 -f DockerImageAPI .

@@ -1,0 +1,65 @@
+<dx-responsive-box singleColumnScreen="xs" [(screenByWidth)]="screen">
+  <dxi-row [ratio]="1"></dxi-row>
+  <dxi-row [ratio]="1" screen="xs"><h1>xs</h1></dxi-row>
+  <dxi-row [ratio]="1"></dxi-row>
+
+  <dxi-col [ratio]="1"></dxi-col>
+  <dxi-col [ratio]="15" screen="sm"></dxi-col>
+  <dxi-col [ratio]="1"></dxi-col>
+
+  <dxi-col [ratio]="1"></dxi-col>
+  <dxi-col [ratio]="8" screen="md"></dxi-col>
+  <dxi-col [ratio]="1"></dxi-col>
+
+  <dxi-col [ratio]="1"></dxi-col>
+  <dxi-col [ratio]="4" screen="lg"></dxi-col>
+  <dxi-col [ratio]="1"></dxi-col>
+
+  <dxi-item>
+    <dxi-location [row]="0" [col]="0" screen="xs"></dxi-location>
+    <dxi-location [row]="0" [col]="1" [colspan]="5" screen="sm md lg"></dxi-location>
+    <dxi-location [row]="0" [col]="1" screen="lg"></dxi-location>
+    <div *dxTemplate>
+      <div style="background: #F5F5F5;">
+        <dx-toolbar height="40" [rtlEnabled]="true" style="padding: 5px;">
+          <dxi-item location="before" widget="dxButton" locateInMenu="never">
+            <div *dxTemplate>
+              <div class='toolbar-label'>
+                <strong>Transportes Ramos</strong><br>
+                <span style="font-size: 10px">{{completeName}}</span>
+              </div>
+            </div>
+          </dxi-item>
+          <dxi-item location="after" widget="dxButton" locateInMenu="never">
+            <div *dxTemplate>
+              <img src="assets/images/logo.png" height="40">
+            </div>
+          </dxi-item>
+        </dx-toolbar>
+        <dx-menu [dataSource]="dataActions"
+                 displayExpr="text"
+                 orientation="horizontal"
+                 submenuDirection="auto"
+                 (onItemClick)="ItemClick($event)"></dx-menu>
+      </div>
+      <div>
+        <ng-content></ng-content>
+      </div>
+      <dx-load-panel message="{{Blocker.message}}" shadingColor="rgba(0,0,0,0.4)" [(visible)]="Blocker.block" [showIndicator]="true"
+                     [showPane]="true" [shading]="true" [closeOnOutsideClick]="false"></dx-load-panel>
+    </div>
+  </dxi-item>
+  <dxi-item>
+    <dxi-location [row]="0" [col]="0" screen="ms sm md lg"></dxi-location>
+    <div *dxTemplate></div>
+  </dxi-item>
+  <dxi-item>
+    <dxi-location [row]="0" [col]="0" screen="xs"></dxi-location>
+    <dxi-location [row]="0" [col]="6" screen="sm md lg"></dxi-location>
+    <div *dxTemplate></div>
+  </dxi-item>
+</dx-responsive-box>
+<app-layout-keep-alive [Visible]="showKeepAlive"
+                      [Blocker]="Blocker"
+                      [SessionAlive]="sessionAlive"
+                      (Stopping)="CloseAlive()"></app-layout-keep-alive>

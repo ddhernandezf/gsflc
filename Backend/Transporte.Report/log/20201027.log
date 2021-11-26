@@ -1,0 +1,4 @@
+2020-10-27 11:58:59,890 [12] INFO Transporte.Log - {"User":"luigi@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"::1"}}
+2020-10-27 14:04:59,982 [14] INFO Transporte.Log - {"User":"luigi@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-10-27 14:10:15,133 [17] INFO Transporte.Log - {"User":"luigi@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}
+2020-10-27 14:15:22,170 [7] INFO Transporte.Log - {"User":"luigi@mitigt.com","Class":"Balance","Method":"General","Data":{"ip":"127.0.0.1"}}

@@ -1,0 +1,113 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <form (submit)="Submit()">
+    <dx-form [formData]="Form"
+             [showColonAfterLabel]="false"
+             [showValidationSummary]="false"
+             (onFieldDataChanged)="FieldChanged($event)"
+             labelLocation="top">
+      <dxo-col-count-by-screen
+        [xs]="8"></dxo-col-count-by-screen>
+      <dxi-item dataField="vehicleType.id"
+                [colSpan]="8"
+                [label]="{ text: 'Tipo' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: DataType,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar'
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="brand.id"
+                [colSpan]="4"
+                [label]="{ text: 'Marca' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: srcBrand,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  disabled: disableBrand
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="brandModel.id"
+                [colSpan]="4"
+                [label]="{ text: 'Modelo' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: srcModel,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  disabled: disableModel
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="registrationType.id"
+                [colSpan]="4"
+                [label]="{ text: 'Matricula' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: DataRegType,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar'
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="registration"
+                [colSpan]="4"
+                [label]="{ text: ' ' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 10
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="year"
+                [colSpan]="3"
+                [label]="{ text: 'Año' }"
+                editorType="dxNumberBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 4
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="name"
+                [colSpan]="5"
+                [label]="{ text: 'Nombre' }"
+                editorType="dxTextBox"
+                [editorOptions]="{
+                  showClearButton: true,
+                  maxLength: 50
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="active"
+                [colSpan]="2"
+                [label]="{ text: 'Activo' }"
+                editorType="dxCheckBox">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item itemType="button"
+                horizontalAlignment="center"
+                [colSpan]="8"
+                [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    </dx-form>
+  </form>
+
+</dx-popup>

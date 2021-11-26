@@ -1,0 +1,17 @@
+2020-06-05 16:11:51,890 [9] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:22,090 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:22,289 [14] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:33,878 [14] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Add","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:34,187 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:34,218 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:38,368 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Delete","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:39,904 [23] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ExpenseType","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:48,443 [14] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:48,533 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"Role","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:48,693 [14] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"GetActions","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:12:58,039 [14] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:13:05,154 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Update","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:13:05,323 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:13:05,392 [17] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:13:21,000 [16] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Delete","Data":{"ip":"127.0.0.1"}}
+2020-06-05 16:13:21,116 [23] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}

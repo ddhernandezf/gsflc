@@ -1,0 +1,91 @@
+<dx-popup [showTitle]="true"
+          [visible]="Visible"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <h3 style="color: #728e94;">{{Title}}</h3>
+  <h2 style="color: #728e94;">{{Vehicle.text}}</h2>
+  <form (submit)="Submit()">
+    <dx-form [formData]="Form"
+             [showColonAfterLabel]="false"
+             [showValidationSummary]="false" (onFieldDataChanged)="FormFieldChange($event)"
+             labelLocation="top">
+      <dxo-col-count-by-screen
+        [xs]="5"></dxo-col-count-by-screen>
+      <dxi-item dataField="type"
+                [disabled]="Form.id !== null"
+                [colSpan]="2"
+                [label]="{ text: 'Transacción' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: dataTransactionType,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  disabled: DisableTransaction()
+                }">
+        <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="service"
+                [disabled]="Form.id !== null"
+                [colSpan]="3"
+                [visible]="Form.type === 1"
+                [label]="{ text: 'Servicio' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: dataServices,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  showClearButton: true,
+                  searchEnabled: true,
+                  grouped: true
+                }">
+        <dxi-validation-rule *ngIf="Form.type === 1"
+                             type="required"
+                             message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="expense"
+                [disabled]="Form.id !== null"
+                [colSpan]="3"
+                [visible]="Form.type === 2"
+                [label]="{ text: 'Gasto' }"
+                editorType="dxSelectBox"
+                [editorOptions]="{
+                  dataSource: dataExpenses,
+                  displayExpr: 'name',
+                  valueExpr: 'id',
+                  placeholder: 'Seleccionar',
+                  showClearButton: true,
+                  searchEnabled: true,
+                  grouped: true
+                }">
+        <dxi-validation-rule *ngIf="Form.type === 2"
+          type="required"
+          message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item dataField="transactionDate"
+                [colSpan]="5"
+                [label]="{ text: 'Fecha' }"
+                editorType="dxDateBox"
+                [editorOptions]="{
+                  type: 'date',
+                  displayFormat: 'dd/MM/yyyy',
+                  showClearButton: true,
+                  min: minDate,
+                  max: maxDate
+                }">
+        <dxi-validation-rule type="required" message="Requerido"></dxi-validation-rule>
+      </dxi-item>
+      <dxi-item itemType="button"
+                horizontalAlignment="center"
+                [colSpan]="5"
+                [buttonOptions]="{
+                  text:'Guardar',
+                  icon: 'save',
+                  useSubmitBehavior: true
+                }"></dxi-item>
+    </dx-form>
+  </form>
+</dx-popup>

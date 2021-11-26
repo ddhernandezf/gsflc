@@ -1,0 +1,10 @@
+<dx-popup [showTitle]="false"
+          [visible]="Visible"
+          [height]="'auto'"
+          width="95%">
+  <h3 style="color: #728e94; text-align: center">Su sesión se cerrará</h3>
+  <dx-button width="100%"
+    icon="key"
+    text="Permanecer conectado ({{counter}})"
+    (click)="KeepItAlive()"></dx-button>
+</dx-popup>

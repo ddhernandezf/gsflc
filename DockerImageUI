@@ -1,0 +1,10 @@
+FROM miti/angularbuilder:9.1.0 AS build
+WORKDIR /usr/angular/src
+COPY ./UI ./
+RUN npm install &&\
+    ng build --prod -c=production
+
+FROM nginx:1.17.1-alpine
+RUN rm /usr/share/nginx/html/50x.html &&\
+    rm /usr/share/nginx/html/index.html
+COPY --from=build /usr/angular/src/dist/Transporte/production /usr/share/nginx/html

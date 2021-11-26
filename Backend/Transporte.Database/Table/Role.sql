@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[Role]
+(
+	[Id]	TINYINT NOT NULL IDENTITY(1,1),
+	[Name]	VARCHAR(40) NOT NULL,
+	CONSTRAINT pkRole PRIMARY KEY([Id]),
+	CONSTRAINT uqRole UNIQUE([Name])
+)

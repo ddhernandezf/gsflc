@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Reports\Balance.repx" />
+    <None Remove="Reports\BalanceSingle.repx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\BalanceSingle.repx" />
+    <EmbeddedResource Include="Reports\Balance.repx" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Reporting.Core" Version="20.1.3" />
+    <PackageReference Include="DevExtreme.AspNet.Data" Version="2.6.1" />
+    <PackageReference Include="DevExtreme.AspNet.Core" Version="20.1.3" />
+    <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Transporte.BL\Transporte.BL.csproj" />
+    <ProjectReference Include="..\Transporte.Model\Transporte.Model.csproj" />
+    <ProjectReference Include="..\Transporte\Transporte.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Reports\Balance.cs">
+      <DependentUpon>Balance.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\Balance.Designer.cs">
+      <DependentUpon>Balance.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\BalanceSingle.cs">
+      <DependentUpon>BalanceSingle.repx</DependentUpon>
+    </Compile>
+    <Compile Update="Reports\BalanceSingle.Designer.cs">
+      <DependentUpon>BalanceSingle.repx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties DismissedDevExtremeVersion="20.2.6" TemplateFeatures="NETCORE" /></VisualStudio></ProjectExtensions>
+</Project>

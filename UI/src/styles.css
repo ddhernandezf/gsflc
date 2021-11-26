@@ -1,0 +1,18 @@
+html,
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.dx-field.miti{
+  padding: 5px;
+}
+
+.dx-field.miti > .dx-field-item-label-location-top{
+  text-align: left;
+}
+
+.dx-field.miti > .dx-field-value{
+  float: left;
+  width: 100% !important;
+}

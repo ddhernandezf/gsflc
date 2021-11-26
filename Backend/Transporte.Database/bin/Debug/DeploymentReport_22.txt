@@ -1,0 +1,20 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       The column [dbo].[Vehicle].[AssignedPilot] is being dropped, data loss could occur.
+
+** User actions
+     Drop
+       [dbo].[fkVehiclePilot] (Foreign Key)
+     Alter
+       [dbo].[Vehicle] (Table)
+
+** Supporting actions
+
+The column [dbo].[Vehicle].[AssignedPilot] is being dropped, data loss could occur.
+

@@ -1,0 +1,23 @@
+<dx-popup [showTitle]="true"
+          [visible]="Properties.show"
+          [height]="'auto'"
+          (onHiding)="Close()"
+          [showCloseButton]="true"
+          width="95%">
+  <dx-box direction="row" width="100%">
+    <dxi-item [ratio]="1">
+      <div class="dx-field Netunim" [innerHtml]="Properties.message"></div>
+    </dxi-item>
+  </dx-box>
+  <dx-box direction="row" width="100%">
+    <dxi-item [ratio]="1"></dxi-item>
+    <dxi-item [ratio]="2">
+      <dx-button stylingMode="contained"
+                 [icon]="Properties.buttonIcon"
+                 [text]="Properties.buttonText"
+                 type="danger"
+                 (click)="Click()"></dx-button>
+    </dxi-item>
+    <dxi-item [ratio]="1"></dxi-item>
+  </dx-box>
+</dx-popup>

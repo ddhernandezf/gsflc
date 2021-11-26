@@ -1,0 +1,9 @@
+2020-04-08 06:49:04,740 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"::1"}}
+2020-04-08 08:41:13,942 [7] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:41:44,780 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:41:52,146 [5] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Get","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:42:40,364 [20] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:58:38,090 [8] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:58:50,031 [18] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}
+2020-04-08 08:59:27,902 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}
+2020-04-08 09:00:24,527 [8] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"127.0.0.1"}}

@@ -1,0 +1,38 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       [dbo].[Pilot]
+       [dbo].[RegistrationType]
+       [dbo].[Vehicle]
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       unnamed constraint on [dbo].[Pilot] (Default Constraint)
+       unnamed constraint on [dbo].[Vehicle] (Default Constraint)
+     Table rebuild
+       [dbo].[Pilot] (Table)
+       [dbo].[RegistrationType] (Table)
+       [dbo].[Vehicle] (Table)
+
+** Supporting actions
+     Drop
+       [dbo].[fkVehiclePilot] (Foreign Key)
+       [dbo].[fkVehicleRegistrsationtype] (Foreign Key)
+       [dbo].[fkTransactionVehicle] (Foreign Key)
+       [dbo].[fkTransactiondailyresumeVehicle] (Foreign Key)
+       [dbo].[fkVehicleType] (Foreign Key)
+       [dbo].[fkVehicleModel] (Foreign Key)
+       [dbo].[fkVehicleBrand] (Foreign Key)
+     Create
+       [dbo].[fkVehiclePilot] (Foreign Key)
+       [dbo].[fkVehicleRegistrsationtype] (Foreign Key)
+       [dbo].[fkTransactionVehicle] (Foreign Key)
+       [dbo].[fkTransactiondailyresumeVehicle] (Foreign Key)
+       [dbo].[fkVehicleType] (Foreign Key)
+       [dbo].[fkVehicleModel] (Foreign Key)
+       [dbo].[fkVehicleBrand] (Foreign Key)

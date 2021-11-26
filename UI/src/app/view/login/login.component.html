@@ -1,0 +1,29 @@
+<app-view-login-change-password *ngIf="showChangeForm"
+                                [Form]="changeForm"
+                                [DataUser]="selectedUser" (FormResult)="Change($event)"></app-view-login-change-password>
+<form (submit)="Login()" style="padding: 20px;" *ngIf="showLoginForm">
+  <div style="text-align: center;">
+    <h3 style="color: #728e94; font-family: 'Helvetica Neue','Segoe UI',Helvetica,Verdana,sans-serif;">ERP<br>Transportes GSFLC</h3>
+    <img src="assets/images/logo.png">
+  </div>
+  <dx-form [formData]="form"
+           [readOnly]="false"
+           [showColonAfterLabel]="false"
+           [showValidationSummary]="false"
+           labelLocation="top"
+           validationGroup="searchFilter">
+    <dxi-item dataField="userName" editorType="dxTextBox"
+              [label]="{ text: 'Usuario'}">
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="password" editorType="dxTextBox"
+              [label]="{ text: 'Contraseña'}"
+              [editorOptions]="{ mode: 'password' }">
+      <dxi-validation-rule type="required" message="*"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item itemType="button" horizontalAlignment="center"
+              [buttonOptions]="{ text:'Ingresar', icon: 'key', useSubmitBehavior: true }"></dxi-item>
+  </dx-form>
+</form>
+<dx-load-panel message="{{Blocker.message}}" shadingColor="rgba(0,0,0,0.4)" [(visible)]="Blocker.block" [showIndicator]="true"
+               [showPane]="true" [shading]="true" [closeOnOutsideClick]="false"></dx-load-panel>

@@ -1,0 +1,4 @@
+2020-05-22 21:26:20,778 [6] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ServiceType","Method":"Get","Data":{"ip":"::1"}}
+2020-05-22 21:27:23,126 [4] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ServiceType","Method":"Get","Data":{"ip":"::1"}}
+2020-05-22 21:49:25,689 [7] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"ServiceType","Method":"Get","Data":{"ip":"::1"}}
+2020-05-22 21:58:47,584 [24] INFO Transporte.Log - {"User":"douglas@mitigt.com","Class":"User","Method":"Authenticate","Data":{"ip":"::1"}}

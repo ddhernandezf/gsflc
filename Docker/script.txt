@@ -1,0 +1,36 @@
+docker exec -it gsflcDB "bash"
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'Letmein1.'
+
+USE [master]
+GO
+CREATE DATABASE [Transporte] ON ( FILENAME = N'/var/opt/mssql/data/Transporte/Transporte.mdf' ), ( FILENAME = N'/var/opt/mssql/data/Transporte/Transporte_log.ldf' ) FOR ATTACH
+GO
+
+docker-compose -f "docker-compose-win.yml" up -d
+docker-compose -f --compatibility "docker-compose-win.yml" up -d
+docker-compose -f "docker-compose-win.yml" down
+
+docker-compose -f "docker-compose-lnx.yml" up -d
+docker-compose -f "docker-compose-lnx.yml" down
+
+docker-compose -f "docker-compose-dck.yml" up -d
+docker-compose -f "docker-compose-dck.yml" down
+
+#retorna la ip del contenedor
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' gsflcUI
+
+docker exec -it gsflcRPT bash
+apt-get update
+apt-get install -y libgdiplus libc6-dev
+
+docker-compose -f "docker-compose-dck.yml" up -d && docker exec gsflcRPT bash -c 'apt-get update && apt-get install -y libgdiplus libc6-dev'
+docker-compose -f "docker-compose-lnx.yml" up -d && docker exec gsflcRPT bash -c 'apt-get update && apt-get install -y libgdiplus libc6-dev'
+
+/*aws*/
+ssh -i "keySk8ertux.pem" ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com
+scp -r -i "keySk8ertux.pem" ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/Backups/GSFLC/DB/ /mnt/d/Backups/GSFLC
+scp -r -i "keySk8ertux.pem" ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/Backups/GSFLC/UI/Deploy/ /mnt/d/Backups/GSFLC/UI
+scp -r -i "keySk8ertux.pem" /mnt/d/Container/Linux/GSFLC/* ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/GSFLC/
+scp -r -i "keySk8ertux.pem" /mnt/d/Container/Linux/GSFLC/API/* ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/GSFLC/API/
+scp -r -i "keySk8ertux.pem" /mnt/d/Container/Linux/GSFLC/UI/Deploy/* ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/Deploy/GSFLC/UI/
+scp -r -i "keySk8ertux.pem" /mnt/d/Container/Linux/GSFLC/REPORT/* ubuntu@ec2-13-59-41-230.us-east-2.compute.amazonaws.com:/Deploy/GSFLC/REPORT/
